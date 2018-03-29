@@ -66,8 +66,16 @@ DOWNLOAD_DELAY = 3
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'dushu.pipelines.DushuPipeline': 300,
+    # 'dushu.pipelines.DushuMongoPipeline': 301,
+   'dushu.pipelines.DushuMysqlPipeline': 302,
 }
 
+DB_HOST = '127.0.0.1'
+DB_PORT = 3306
+DB_NAME = 'dushu'
+DB_CHARSET = 'utf8'
+DB_USER = 'root'
+DB_PWD = '123456'
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True

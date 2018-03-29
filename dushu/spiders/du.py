@@ -39,7 +39,7 @@ class DuSpider(CrawlSpider):
         item['book_price'] = response.xpath('//div[@class="book-details"]//span/text()').extract_first()
         #简介
         item['book_info'] = response.xpath('//div[@class="book-summary"]/div/div/text()').extract_first()
-        item['book_publish'] = response.xpath('//div[@class="book-summary"]/div/div/text()').extract_first()
+        item['book_publish'] = response.xpath('//div[@class="book-details"]//table//tr[2]/td[2]/a/text()').extract_first()
         yield item
 
 
